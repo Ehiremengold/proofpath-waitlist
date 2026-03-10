@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { supabase } from "@/lib/supabase";
+import { getSupabase } from "@/lib/supabase";
 
 export async function POST(req: NextRequest) {
   const body = await req.json();
@@ -14,12 +14,11 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "invalid email" }, { status: 400 });
   }
 
-  const { error } = await supabase
+  const { error } = await getSupabase()
     .from("waitlist")
     .insert([{ email: email.toLowerCase().trim(), role }]);
 
   if (error) {
-    // Postgres unique constraint violation code
     if (error.code === "23505") {
       return NextResponse.json({ message: "already on the list" }, { status: 200 });
     }
@@ -31,7 +30,7 @@ export async function POST(req: NextRequest) {
 }
 
 export async function GET() {
-  const { data, error, count } = await supabase
+  const { data, error, count } = await getSupabase()
     .from("waitlist")
     .select("*", { count: "exact" })
     .order("created_at", { ascending: false });

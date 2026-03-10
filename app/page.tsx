@@ -44,7 +44,7 @@ const HOW_IT_WORKS = [
   {
     step: "04", tag: "For recruiters",
     title: "See proof, not paper",
-    desc: "Reviewapplications in minutes. See what candidates have actually done — no inbox chaos, no CV stacks.",
+    desc: "Review applications in minutes. See what candidates have actually done — no inbox chaos, no CV stacks.",
     icon: <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>,
   },
 ];
